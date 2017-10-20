@@ -19,14 +19,21 @@ module Api
       end
 
       def update
-      end
-
-      def update
+        @customer = Customer.find(params[:id])
+        @customer.update_attributes(customer_params)
       end
 
       def destroy
       end
 
+      private
+      
+      def customer_params
+        params.require(:customer).permit(
+          :name, :street, :zipcode, :city, :country, :phone, :fax, :homepage, :email, :notes, 
+          contacts_attributes: [:id, :title, :fist_name, :last_name]
+        )
+      end
     end
   end
 end
