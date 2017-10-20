@@ -1,0 +1,2 @@
+rvm use ruby-2.4.2@kivitendo-rest-api --create
+export RAILS_ENV=production
