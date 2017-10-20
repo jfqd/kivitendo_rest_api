@@ -80,8 +80,4 @@ test:
 #
 production:
   <<: *default
-  host: <%= ENV['KIVITENDO_DATABASE_HOST'] %>
-  port: <%= ENV['KIVITENDO_DATABASE_PORT'] %>
-  database: <%= ENV['KIVITENDO_DATABASE_NAME'] %>
-  username: <%= ENV['KIVITENDO_DATABASE_USERNAME'] %>
-  password: <%= ENV['KIVITENDO_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
