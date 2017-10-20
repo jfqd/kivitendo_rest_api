@@ -26,4 +26,3 @@ Rabl.configure do |config|
   config.exclude_empty_values_in_collections = true # Defaults to false
   # config.camelize_keys = :upper # Defaults to false
 end
-require 'legacy_mapper'

@@ -15,6 +15,6 @@ module LegacyMapper
         end
       end
 
-    end # base
-  end # self
-end # module
+    end # base.class_eval do
+  end # self.included(base)
+end # module LegacyMapper
