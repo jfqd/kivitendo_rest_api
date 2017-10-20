@@ -12,6 +12,8 @@ module Api
       end
 
       def create
+        @customer = Customer.new(customer_params)
+        @customer.save!
       end
 
       def show
@@ -24,6 +26,8 @@ module Api
       end
 
       def destroy
+        @customer = Customer.find(params[:id])
+        @customer.destroy
       end
 
       private
