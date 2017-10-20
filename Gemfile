@@ -9,6 +9,7 @@ gem 'rails', '~> 5.1.4'
 gem 'pg'
 gem 'passenger'
 gem 'rabl'
+gem 'jbuilder'   # wihout it rabl will not work in rails >= 5
 gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
