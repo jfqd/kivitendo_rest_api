@@ -68,6 +68,35 @@ curl -s \
 '
 ````
 
+```
+curl -s \
+     -u "user:password" \
+     -X POST \
+     -H 'Content-Type: application/xml' \
+     127.0.0.1:3000/api/v1/customers \
+     -d '
+<?xml version="1.0" encoding="UTF-8"?>
+<customer>
+  <name>New Company</name>
+  <street>Teststraße 42</street>
+  <zipcode>1000</zipcode>
+  <city>Berlin</city>
+  <country>Deutschland</country>
+  <phone>030 42424242</phone>
+  <fax>030 43434343</fax>
+  <homepage>http://example.com</homepage>
+  <email>piet@example.com</email>
+  <contacts type="array">
+    <contact>
+      <title>Dr.</title>
+      <fist-name>Piet</fist-name>
+      <last-name>Mustermann</last-name>
+    </contact>
+  </contacts>
+</customer>
+'
+```
+
 ## Todo
 
 - add model validation
@@ -77,6 +106,7 @@ curl -s \
 
 * http://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html
 * https://pikender.github.io/rails4-upgrade-action-pack-xml-params-removed/
+* https://github.com/rails/actionpack-xml_parser
 * http://brandonhilkert.com/blog/using-rails-4-dot-1-secrets-for-configuration/
 * https://github.com/nesquena/rabl/issues/687
 * http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
