@@ -18,13 +18,14 @@ To learn more about rvm please visit: http://rvm.io.
 
 ```
 rvm install ruby-2.4.2
+rvm use ruby-2.4.2@kivitendo-rest-api --create
+gem install bundler
 ```
 
 To get the application started run the following commands in a console:
 
 ```
   cd /path/to/project-folder
-  rvm use ruby-2.4.2@kivitendo-rest-api --create
   export RAILS_ENV=production
   bundle install
 ```
