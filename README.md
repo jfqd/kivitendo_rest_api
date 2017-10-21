@@ -125,6 +125,18 @@ curl -s \
      127.0.0.1:3000/api/v1/customers/1
 ```
 
+### Get a list of all tax-zones
+
+````
+curl -s -u "user:password" 127.0.0.1:3000/api/v1/tax_zones
+````
+
+### Get a list of all currencies
+
+````
+curl -s -u "user:password" 127.0.0.1:3000/api/v1/tax_zones
+````
+
 ## Todo
 
 - add model validation

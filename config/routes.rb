@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :v1, defaults: {format: 'xml'} do
       resources :customers
       resources :tax_zones
+      resources :currencies
     end
     # version 2 of our api
   end
