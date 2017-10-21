@@ -1,6 +1,6 @@
 # REST-API for kivitendo
 
-This project (will) add a REST-API to kivitendo. It is a work in progress :)
+This project aims to add a http-basic protected REST-API to kivitendo.
 
 ## Requirements
 
@@ -15,20 +15,33 @@ On a Mac, Linux, Solaris or any other Unix systems we highly recommend you to us
 the ruby version manager. With rvm upgrading a ruby version is without pain!
 To learn more about rvm please visit: http://rvm.io.
 
+```
+rvm install ruby-2.4.2
+```
+
 To get the application started run the following commands in a console:
 
-````
+```
   cd /path/to/project-folder
   rvm use ruby-2.4.2@kivitendo-rest-api --create
   export RAILS_ENV=production
+  bundle install
+```
+
+Before starting the webserver we need to create a secret, set the http-basic credentials
+and the database-url.
+
+```
+  # remove secrets-files
+  rm config/secrets.yml.enc
+  rm config/secrets.yml.key
   # create a secret for the application
   rails secret
   # and copy it into the secret.yml
-  # together with the database-url
+  # together with the http-basic
+  # credentials and the database-url
   # see secrets.yml.bak for reference
   rails secrets:edit
-  # install gem-dependencies
-  bundle install
   # start the webserver
   passenger start
 ```
@@ -37,9 +50,9 @@ To get the application started run the following commands in a console:
 
 The api is protected by http-basic. Do not forget to protect these secrets by using https!
 
-The default in- and output is in xml, but you can use json too. Just add `.json` to the end of the path.
+The default in- and output is in xml-format, but you can use json too. Just add `.json` to the end of the path.
 
-All following samples will use xml.
+All following samples will use the xml as the exchange-format.
 
 ### Get a list of all customers
 
@@ -68,6 +81,8 @@ curl -s \
 '
 ````
 
+### Create a new customer
+
 ```
 curl -s \
      -u "user:password" \
@@ -86,8 +101,12 @@ curl -s \
   <fax>030 43434343</fax>
   <homepage>http://example.com</homepage>
   <email>piet@example.com</email>
-  <contacts type="array">
+  <ustid></ustid>
+  <taxzone-id>4</taxzone-id>
+  <currency-id>1</currency-id>
+  <contacts>
     <contact>
+      <gender>m</gender>
       <title>Dr.</title>
       <fist-name>Piet</fist-name>
       <last-name>Mustermann</last-name>
@@ -95,6 +114,15 @@ curl -s \
   </contacts>
 </customer>
 '
+```
+
+### Delete a new customer
+
+```
+curl -s \
+     -u "user:password" \
+     -X DELETE \
+     127.0.0.1:3000/api/v1/customers/1
 ```
 
 ## Todo
