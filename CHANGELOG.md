@@ -1,3 +1,8 @@
+0.0.3, 2017-10-21
+---
+* REST-API for Products
+* Fix order index-view
+
 0.0.2, 2017-10-21
 ---
 * REST-API for Orders and including Orderitems
