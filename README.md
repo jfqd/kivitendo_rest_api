@@ -134,7 +134,7 @@ curl -s -u "user:password" 127.0.0.1:3000/api/v1/tax_zones
 ### Get a list of all currencies
 
 ````
-curl -s -u "user:password" 127.0.0.1:3000/api/v1/tax_zones
+curl -s -u "user:password" 127.0.0.1:3000/api/v1/currencies
 ````
 
 ## Todo
