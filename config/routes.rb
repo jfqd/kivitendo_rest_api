@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :customers
       resources :tax_zones
       resources :currencies
+      resources :orders
     end
     # version 2 of our api
   end
