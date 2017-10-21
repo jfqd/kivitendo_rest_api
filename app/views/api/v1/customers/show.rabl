@@ -1,6 +1,7 @@
 collection @customer
 
 attributes :id,
+           :customernumber,
            :name,
            :street,
            :zipcode,
@@ -10,8 +11,11 @@ attributes :id,
            :fax,
            :homepage,
            :email,
-           :notes
+           :notes,
+           :ustid,
+           :taxzone_id,
+           :currency_id
 
 child :contacts do
-  attributes :id, :title, :fist_name, :last_name
+  attributes :id, :title, :fist_name, :last_name, :gender, :position, :email, :phone, :fax, :mobile
 end

@@ -33,10 +33,8 @@ module Api
       private
       
       def customer_params
-        params.require(:customer).permit(
-          :name, :street, :zipcode, :city, :country, :phone, :fax, :homepage, :email, :notes, 
-          contacts_attributes: [:id, :title, :fist_name, :last_name]
-        )
+        # FIXME: might be dangerous to whitelist everything
+        params.require(:customer).permit!
       end
     end
   end
