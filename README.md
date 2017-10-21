@@ -203,6 +203,33 @@ curl -s \
 '
 ```
 
+### Get a list of all products
+
+```
+curl -s -u "user:password" 127.0.0.1:3000/api/v1/products
+```
+
+### Get one product
+
+```
+curl -s -u "user:password" 127.0.0.1:3000/api/v1/products/1
+```
+
+### Change product
+
+```
+curl -s \
+     -u "user:password" \
+     -X PUT \
+     -H 'Content-Type: application/xml' \
+     127.0.0.1:3000/api/v1/products/1 \
+     -d '
+<product>
+ <description>Change description</description>
+</product>
+'
+```
+
 ## Todo
 
 - add model validation
@@ -211,6 +238,8 @@ curl -s \
 
 ## Useful links
 
+* https://github.com/jfqd/kivitendo_rest_api
+* https://github.com/nesquena/rabl
 * http://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html
 * https://pikender.github.io/rails4-upgrade-action-pack-xml-params-removed/
 * https://github.com/rails/actionpack-xml_parser
@@ -218,5 +247,8 @@ curl -s \
 * https://github.com/nesquena/rabl/issues/687
 * http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
 * http://guides.rubyonrails.org/form_helpers.html#dealing-with-model-objects
+* http://api.rubyonrails.org/classes/ActiveRecord/NestedAttributes/ClassMethods.html
+* https://stackoverflow.com/questions/38360271/rails-5-accepts-nested-attributes-not-working#44512631
+* https://stackoverflow.com/questions/21163298/how-to-rename-alias-rabl-nodes
 
 (c) 2017 S. Husch | qutic.com
