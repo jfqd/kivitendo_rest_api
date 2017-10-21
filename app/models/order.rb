@@ -14,10 +14,8 @@ class Order < ApplicationRecord
                                              reject_if: :all_blank
   
   def orderitems=(params)
-    Rails.logger.warn("params= #{params.inspect}")
     params.each do |c|
       if new_record?
-        Rails.logger.warn("c= #{c[1].inspect}")
         self.orderitems.build(c[1])
       else
         if c['id'].present?
