@@ -96,7 +96,6 @@ curl -s \
      -H 'Content-Type: application/xml' \
      127.0.0.1:3000/api/v1/customers \
      -d '
-<?xml version="1.0" encoding="UTF-8"?>
 <customer>
   <name>New Company</name>
   <street>Teststraße 42</street>
@@ -122,7 +121,7 @@ curl -s \
 '
 ```
 
-### Delete a new customer
+### Delete a customer
 
 ```
 curl -s \
@@ -164,7 +163,6 @@ curl -s \
      -H 'Content-Type: application/xml' \
      127.0.0.1:3000/api/v1/orders \
      -d '
-<?xml version="1.0" encoding="UTF-8"?>
 <order>
   <customer-id>1</customer-id>
   <contact-id>1</contact-id>
@@ -230,6 +228,59 @@ curl -s \
 </product>
 '
 ```
+
+### Get a list of all categories
+
+```
+curl -s -u "user:password" 127.0.0.1:3000/api/v1/categories
+```
+
+### Get one category
+
+```
+curl -s -u "user:password" 127.0.0.1:3000/api/v1/categories/1
+```
+
+### Change category
+
+```
+curl -s \
+     -u "user:password" \
+     -X PUT \
+     -H 'Content-Type: application/xml' \
+     127.0.0.1:3000/api/v1/categories/1 \
+     -d '
+<category>
+ <name>New name</name>
+</category>
+'
+```
+
+### Create a new category
+
+```
+curl -s \
+     -u "user:password" \
+     -X POST \
+     -H 'Content-Type: application/xml' \
+     127.0.0.1:3000/api/v1/categories \
+     -d '
+<category>
+  <name>Housing</name>
+</category>
+'
+```
+
+### Delete a category
+
+```
+curl -s \
+     -u "user:password" \
+     -X DELETE \
+     127.0.0.1:3000/api/v1/categories/1
+```
+
+You get the idea, right?
 
 ## Hosting
 
