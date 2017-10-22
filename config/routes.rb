@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :currencies
       resources :orders
       resources :products
+      resources :categories
     end
     # version 2 of our api
   end

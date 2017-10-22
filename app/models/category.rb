@@ -1,11 +1,10 @@
-class Product < ApplicationRecord
-  self.table_name  = 'parts'
+class Category < ApplicationRecord
+  self.table_name  = 'partsgroup'
   self.primary_key = 'id'
   
   # map legacy fields-names to usable ones
   legacy_mapper [
-    [:productnumber, :partnumber], [:net_listprice, :listprice], [:net_sellprice, :sellprice],
-    [:category_id, :partsgroup_id]
+    [:name, :partsgroup]
   ]
   
   def created_at

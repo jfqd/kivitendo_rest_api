@@ -1,6 +1,7 @@
 collection @product
 
 attributes :id,
+           :category_id,
            :productnumber,
            :description,
            :unit,
@@ -8,5 +9,6 @@ attributes :id,
            :net_listprice,
            :net_sellprice,
            :weight,
+           :shop,
            :created_at,
            :updated_at
