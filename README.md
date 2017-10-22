@@ -2,6 +2,19 @@
 
 This project aims to add a http-basic protected REST-API to kivitendo.
 
+The following models are included:
+
+| rest_api model     | kivitendo database tables |
+|--------------------|---------------------------|
+| customer           | customer                  |
+| contact            | contacts                  |
+| tax_zone           | tax_zones                 |
+| currency           | currencies                |
+| order              | oe                        |
+| orderitem          | orderitems                |
+| product            | parts                     |
+| category           | partsgroup                |
+
 ## Requirements
 
 * kivitendo ~> 3.4.1
