@@ -1,3 +1,9 @@
+0.0.4, 2017-10-22
+---
+* REST-API for Categories
+* Fix model-finders
+* Ensure a valid return for created_at and updated_at
+
 0.0.3, 2017-10-21
 ---
 * REST-API for Products
