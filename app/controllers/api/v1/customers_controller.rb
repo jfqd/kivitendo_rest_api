@@ -5,7 +5,9 @@ module Api
       def index
         @customers = if params[:created_at_gte].present?
           created_at_gte = Time.zone.parse(params[:created_at_gte])
-          Customer.find(:all, :conditions => ["created_at >= ?", created_at_gte])
+          Customer.where("itime >= ?", created_at_gte)
+        elsif params[:email].present?
+          Customer.where(email: params[:email])
         else
           Customer.all
         end

@@ -5,7 +5,7 @@ module Api
       def index
         @orders = if params[:created_at_gte].present?
           created_at_gte = Time.zone.parse(params[:created_at_gte])
-          Order.find(:all, :conditions => ["created_at >= ?", created_at_gte])
+          Order.where("itime >= ?", created_at_gte)
         else
           Order.all
         end
