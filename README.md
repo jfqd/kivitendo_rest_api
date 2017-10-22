@@ -19,13 +19,14 @@ To learn more about rvm please visit: http://rvm.io.
 ```
 rvm install ruby-2.4.2
 rvm use ruby-2.4.2@kivitendo-rest-api --create
-gem install bundler
+rvm @global do gem install bundler
 ```
 
 To get the application started run the following commands in a console:
 
 ```
-  cd /path/to/project-folder
+  git clone https://github.com/jfqd/kivitendo_rest_api.git
+  cd kivitendo_rest_api
   export RAILS_ENV=production
   bundle install
 ```
@@ -53,11 +54,11 @@ and the database-url.
 
 ## Usage
 
-The api is protected by http-basic. Do not forget to protect these secrets by using https!
+The api is protected by http-basic. Do not forget to protect these secrets by using https! To do so remove the comments and change the value for the hostname in `config/initializers/application_controller_renderer.rb`
 
 The default in- and output is in xml-format, but you can use json too. Just add `.json` to the end of the path.
 
-All following samples will use the xml as the exchange-format.
+All following samples will use xml as the exchange-format.
 
 ### Get a list of all customers
 
