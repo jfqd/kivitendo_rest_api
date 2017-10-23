@@ -55,10 +55,11 @@ and the database-url.
   # create a secret for the application
   rails secret
 
-  # and copy it into the secret.yml
+  # and copy it into the secret.yml.enc
   # together with the http-basic
   # credentials and the database-url
   # see secrets.yml.bak for reference
+  rails secrets:setup
   rails secrets:edit
 
   # start the webserver
@@ -302,7 +303,6 @@ We use Phusion Passenger, but you can use thin, puma, unicorn or any other rack 
 ## Todo
 
 - add model validation
-- add https requirement
 - add tests
 
 ## Useful links
@@ -320,4 +320,4 @@ We use Phusion Passenger, but you can use thin, puma, unicorn or any other rack 
 * https://stackoverflow.com/questions/38360271/rails-5-accepts-nested-attributes-not-working#44512631
 * https://stackoverflow.com/questions/21163298/how-to-rename-alias-rabl-nodes
 
-(c) 2017 Copyright (c) 2017 Stefan Husch, qutic development
+(c) 2017 Stefan Husch, qutic development
