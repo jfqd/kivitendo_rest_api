@@ -17,10 +17,10 @@ The following models are included:
 
 ## Requirements
 
-* kivitendo ~> 3.4.1
-* Ruby ~> 2.4.2
-* Bundler ~> 1.15.4
-* Passenger >= 5.1.11
+* kivitendo ~> 3.5.1
+* Ruby ~> 2.4.4
+* Bundler ~> 1.16.1
+* Passenger >= 5.2.2
 
 ## Installation
 
@@ -30,8 +30,8 @@ the ruby version manager. With rvm upgrading a ruby version is without pain!
 To learn more about rvm please visit: http://rvm.io.
 
 ```
-rvm install ruby-2.4.3
-rvm use ruby-2.4.3@kivitendo-rest-api --create
+rvm install ruby-2.4.4
+rvm use ruby-2.4.4@kivitendo-rest-api --create
 rvm @global do gem install bundler
 ```
 
@@ -44,8 +44,8 @@ To get the application started run the following commands in a console:
   bundle install
 ```
 
-Before starting the webserver we need to create a secret, set the http-basic credentials
-and the database-url.
+Before starting the webserver we need to create a secret, set the http-basic
+credentials and the database-url.
 
 ```
   # remove secrets-files
@@ -68,9 +68,12 @@ and the database-url.
 
 ## Usage
 
-The api is protected by http-basic. Do not forget to protect these secrets by using https! To do so remove the comments and change the value for the hostname in `config/initializers/application_controller_renderer.rb`
+The api is protected by http-basic. Do not forget to protect these secrets by
+using https! To do so remove the comments and change the value for the hostname
+in `config/initializers/application_controller_renderer.rb`
 
-The default in- and output is in xml-format, but you can use json too. Just add `.json` to the end of the path.
+The default in- and output is in xml-format, but you can use json too. Just add
+`.json` to the end of the path.
 
 All following samples will use xml as the exchange-format.
 
@@ -320,4 +323,4 @@ We use Phusion Passenger, but you can use thin, puma, unicorn or any other rack 
 * https://stackoverflow.com/questions/38360271/rails-5-accepts-nested-attributes-not-working#44512631
 * https://stackoverflow.com/questions/21163298/how-to-rename-alias-rabl-nodes
 
-(c) 2017 Stefan Husch, qutic development
+(c) 2018 Stefan Husch, qutic development
