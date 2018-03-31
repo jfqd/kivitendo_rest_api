@@ -30,8 +30,8 @@ the ruby version manager. With rvm upgrading a ruby version is without pain!
 To learn more about rvm please visit: http://rvm.io.
 
 ```
-rvm install ruby-2.4.2
-rvm use ruby-2.4.2@kivitendo-rest-api --create
+rvm install ruby-2.4.3
+rvm use ruby-2.4.3@kivitendo-rest-api --create
 rvm @global do gem install bundler
 ```
 
