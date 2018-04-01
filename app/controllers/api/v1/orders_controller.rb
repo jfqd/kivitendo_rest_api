@@ -20,7 +20,11 @@ module Api
       end
 
       def show
-        @order = Order.find(params[:id])
+        @order = if params[:order_number].present?
+          Order.where("ordnumber = ?", params[:order_number])
+        else
+          Order.find(params[:id])
+        end
       end
 
       def update
