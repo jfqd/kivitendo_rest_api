@@ -21,6 +21,7 @@ The following models are included:
 * Ruby ~> 2.4.4
 * Bundler ~> 1.16.1
 * Passenger >= 5.2.2
+* libpq-dev (on Debian)
 
 ## Installation
 
@@ -53,17 +54,20 @@ credentials and the database-url.
   rm config/secrets.yml.key
   
   # create a secret for the application
-  rails secret
+  bundle exec rails secret
 
   # and copy it into the secret.yml.enc
   # together with the http-basic
   # credentials and the database-url
   # see secrets.yml.bak for reference
-  rails secrets:setup
-  rails secrets:edit
+  bundle exec rails secrets:setup
+  bundle exec rails secrets:edit
 
   # start the webserver
-  passenger start
+  bundle exec passenger start -d
+  
+  # stop the webserver
+  bundle exec passenger stop
 ```
 
 ## Usage
@@ -181,6 +185,7 @@ curl -s \
      127.0.0.1:3000/api/v1/orders \
      -d '
 <order>
+  <order-number>4711</order-number>
   <customer-id>1</customer-id>
   <contact-id>1</contact-id>
   <gross-total>49.0</gross-total>
