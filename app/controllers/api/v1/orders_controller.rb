@@ -13,7 +13,9 @@ module Api
 
       def create
         @order = Order.new(order_params)
-        @order.ordnumber = (Order.last.ordnumber.to_i + 1).to_s
+        if @order.order_number.empty?
+          @order.order_number = (Order.last.order_number.to_i + 1).to_s
+        end
         @order.save!
       end
 

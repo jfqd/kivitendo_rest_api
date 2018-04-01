@@ -1,6 +1,7 @@
 collection @order
 
 attributes :id,
+           :order_number,
            :customer_id,
            :contact_id,
            :gross_total,
