@@ -75,7 +75,7 @@ GEM
     passenger (5.2.2)
       rack
       rake (>= 0.8.1)
-    pg (1.0.0)
+    pg (0.21.0)
     rabl (0.13.1)
       activesupport (>= 2.3.14)
     rack (2.0.4)
@@ -138,7 +138,7 @@ DEPENDENCIES
   jbuilder
   listen (>= 3.0.5, < 3.2)
   passenger
-  pg
+  pg (= 0.21.0)
   rabl
   rails (~> 5.1.4)
   spring
@@ -146,4 +146,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
