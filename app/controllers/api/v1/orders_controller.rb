@@ -21,7 +21,7 @@ module Api
 
       def show
         @order = if params[:order_number].present?
-          Order.where("ordnumber = ?", params[:order_number])
+          Order.where("ordnumber = ?", params[:order_number]).first
         else
           Order.find(params[:id])
         end
