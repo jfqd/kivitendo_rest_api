@@ -4,8 +4,11 @@ class Product < ApplicationRecord
   
   # map legacy fields-names to usable ones
   legacy_mapper [
-    [:productnumber, :partnumber], [:net_listprice, :listprice], [:net_sellprice, :sellprice],
-    [:category_id, :partsgroup_id]
+    [:productnumber, :partnumber],
+    [:net_listprice, :listprice],
+    [:net_sellprice, :sellprice],
+    [:category_id, :partsgroup_id],
+    [:buchungsgruppen_id, :tax_group_id]
   ]
   
   def created_at

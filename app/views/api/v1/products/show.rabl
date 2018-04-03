@@ -2,6 +2,7 @@ collection @product
 
 attributes :id,
            :category_id,
+           :tax_group_id,
            :productnumber,
            :description,
            :unit,
