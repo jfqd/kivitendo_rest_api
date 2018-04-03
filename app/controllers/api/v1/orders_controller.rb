@@ -6,6 +6,8 @@ module Api
         @orders = if params[:created_at_gte].present?
           created_at_gte = Time.zone.parse(params[:created_at_gte])
           Order.where("itime >= ?", created_at_gte)
+        elsif params[:order_number].present?
+          Order.where("ordnumber = ?", params[:order_number])
         else
           Order.all
         end
@@ -20,11 +22,7 @@ module Api
       end
 
       def show
-        @order = if params[:order_number].present?
-          Order.where("ordnumber = ?", params[:order_number]).first
-        else
-          Order.find(params[:id])
-        end
+        Order.find(params[:id])
       end
 
       def update
