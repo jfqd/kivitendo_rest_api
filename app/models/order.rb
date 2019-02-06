@@ -6,12 +6,12 @@ class Order < ApplicationRecord
   
   # map legacy fields-names to usable ones
   legacy_mapper [
-    [:order_number, :ordnumber],
-    [:gross_total, :amount],
-    [:net_total, :netamount],
-    [:contact_id, :cp_id],
+    [:order_number,  :ordnumber],
+    [:gross_total,   :amount],
+    [:net_total,     :netamount],
+    [:contact_id,    :cp_id],
     [:delivery_date, :reqdate],
-    [:order_date, :transdate]
+    [:order_date,    :transdate]
   ]
   
   accepts_nested_attributes_for :orderitems, allow_destroy: true,
