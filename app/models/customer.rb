@@ -2,10 +2,13 @@ class Customer < ApplicationRecord
   self.table_name  = 'customer'
   self.primary_key = 'id'
   
-  has_many :contacts, foreign_key: :cp_cv_id
+  has_many :contacts,  foreign_key: :cp_cv_id
+  has_many :shippings, foreign_key: :trans_id
   
-  accepts_nested_attributes_for :contacts, allow_destroy: true,
-                                           reject_if: :all_blank
+  accepts_nested_attributes_for :contacts,  allow_destroy: true,
+                                            reject_if: :all_blank
+  accepts_nested_attributes_for :shippings, allow_destroy: true,
+                                            reject_if: :all_blank
   
   def contacts=(params)
     params.each do |c|
@@ -17,6 +20,21 @@ class Customer < ApplicationRecord
           contact.attributes = c
         else
           self.contacts.build(c)
+        end
+      end
+    end
+  end
+  
+  def shippings=(params)
+    params.each do |s|
+      if new_record?
+        self.shippings.build(s[1])
+      else
+        if s['id'].present?
+          shipping = self.shippings.all.detect { |sh| sh.trans_id == s['id'] }
+          shippings.attributes = s
+        else
+          self.shippings.build(s)
         end
       end
     end

@@ -21,3 +21,6 @@ attributes :id,
 child :contacts do
   attributes :id, :title, :fist_name, :last_name, :gender, :position, :email, :phone, :fax, :mobile, :created_at, :updated_at
 end
+child :shippings do
+  attributes :id, :customer_id, :company, :contact, :gender, :email, :street, :zipcode, :city, :country, :created_at, :updated_at
+end
