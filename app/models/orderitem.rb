@@ -6,7 +6,7 @@ class Orderitem < ApplicationRecord
                      inverse_of:  :orderitems,
                      optional:    true
   
-  # map legacy fields-names to usable ones
+  # map usable to legacy fields-names
   legacy_mapper [
     [:product_id,    :parts_id],
     [:net_price,     :sellprice],

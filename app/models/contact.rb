@@ -6,7 +6,7 @@ class Contact < ApplicationRecord
                         inverse_of:  :contacts,
                         optional:    true
 
-  # map legacy fields-names to usable ones
+  # map usable to legacy fields-names
   legacy_mapper [
     [:id,        :cp_id],
     [:title,     :cp_title],

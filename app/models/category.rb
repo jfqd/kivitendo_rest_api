@@ -2,7 +2,7 @@ class Category < ApplicationRecord
   self.table_name  = 'partsgroup'
   self.primary_key = 'id'
   
-  # map legacy fields-names to usable ones
+  # map usable to legacy fields-names
   legacy_mapper [
     [:name, :partsgroup]
   ]

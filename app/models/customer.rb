@@ -59,31 +59,3 @@ class Customer < ApplicationRecord
   end
   
 end
-
-# taxzone_id
-# ustid
-# currency_id
-
-# discount
-# taxincluded
-# creditlimit
-# customernumber
-# cc
-# bcc
-# business_id
-# taxnumber
-# account_number
-# bank_code
-# bank
-# language
-# obsolete
-# username
-# user_password
-# salesman_id
-# c_vendor_id
-# language_id
-# payment_id
-# geeting
-# iban
-# bic
-# direct_debit

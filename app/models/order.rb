@@ -4,7 +4,7 @@ class Order < ApplicationRecord
   
   has_many :orderitems, foreign_key: :trans_id
   
-  # map legacy fields-names to usable ones
+  # map usable to legacy fields-names
   legacy_mapper [
     [:order_number,  :ordnumber],
     [:gross_total,   :amount],
