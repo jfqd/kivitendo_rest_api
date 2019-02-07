@@ -1,3 +1,10 @@
+0.0.5, 2019-02-07
+---
+* Include shipping-address
+* PaymentTerms (read-only for now)
+* Use latest ruby 2.4 and gem versions
+* fix legacy-field mapping for project tax_group_id
+
 0.0.4, 2017-10-22
 ---
 * REST-API for Categories
