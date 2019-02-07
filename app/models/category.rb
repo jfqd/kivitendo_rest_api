@@ -5,7 +5,6 @@ class Category < ApplicationRecord
   # map usable to legacy fields-names
   legacy_mapper [
     [:name,    :partsgroup]
-    [:sortkey, :sortkey]
   ]
   
   def created_at
