@@ -28,5 +28,6 @@ config/secrets.yml.key
 
 # ignore capistrano
 Capfile
-config/deploy.rb
+config/deploy*
 
+.rsync_cache
