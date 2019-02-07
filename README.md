@@ -6,14 +6,16 @@ The following models are included:
 
 | rest_api model     | kivitendo database tables |
 |--------------------|---------------------------|
-| customer           | customer                  |
-| contact            | contacts                  |
-| tax_zone           | tax_zones                 |
-| currency           | currencies                |
-| order              | oe                        |
-| orderitem          | orderitems                |
-| product            | parts                     |
-| category           | partsgroup                |
+| Customer           | customer                  |
+| Contact            | contacts                  |
+| Shipping           | shipto                    |
+| TaxZone            | tax_zones                 |
+| Currency           | currencies                |
+| Order              | oe                        |
+| Orderitem          | orderitems                |
+| Product            | parts                     |
+| Category           | partsgroup                |
+| PaymentTerms       | payment_terms             |
 
 ## Requirements
 
