@@ -5,8 +5,6 @@ class Product < ApplicationRecord
   # map usable to legacy fields-names
   legacy_mapper [
     [:productnumber,      :partnumber],
-    [:listprice,          :listprice],
-    [:sellprice,          :sellprice],
     [:category_id,        :partsgroup_id],
     [:tax_group_id,       :buchungsgruppen_id]
   ]
