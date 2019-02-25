@@ -9,7 +9,7 @@ class Orderitem < ApplicationRecord
   # map usable to legacy fields-names
   legacy_mapper [
     [:product_id,    :parts_id],
-    [:net_price,     :sellprice],
+    [:price,         :sellprice],
     [:delivery_date, :reqdate],
     [:order_date,    :transdate],
     [:created_at,    :itime],
