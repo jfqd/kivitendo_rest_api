@@ -18,5 +18,5 @@ attributes :id,
            :updated_at
 
 child :orderitems do
-  attributes :id, :position, :product_id, :description, :net_price, :discount, :qty, :unit, :base_qty
+  attributes :id, :position, :product_id, :description, :price, :discount, :qty, :unit, :base_qty
 end
