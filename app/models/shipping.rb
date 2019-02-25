@@ -4,7 +4,7 @@ class Shipping < ApplicationRecord
 
   before_save :set_module
 
-  belongs_to :customer, foreign_key: :id,
+  belongs_to :customer, foreign_key: :trans_id,
                         inverse_of:  :shippings,
                         optional:    true
 
@@ -21,7 +21,7 @@ class Shipping < ApplicationRecord
     [:country,     :shiptocountry],
     [:email,       :shiptoemail]
   ]
-  
+
   def created_at
     I18n.l(self.itime, :format => Api::V1::ApiController.default_api_time_format) unless new_record?
   rescue
@@ -30,7 +30,7 @@ class Shipping < ApplicationRecord
   def created_at=(v)
     # do nothing
   end
-  
+
   def updated_at
     I18n.l(self.mtime, :format => Api::V1::ApiController.default_api_time_format) unless new_record?
   rescue
@@ -39,11 +39,11 @@ class Shipping < ApplicationRecord
   def updated_at=(v)
     # do nothing
   end
-  
+
   private
-  
+
   def set_module
     self.module = "CT"
   end
-end
 
+end
