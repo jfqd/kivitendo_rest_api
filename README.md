@@ -20,21 +20,21 @@ The following models are included:
 ## Requirements
 
 * kivitendo ~> 3.5.1
-* Ruby ~> 2.4.4
+* Ruby >= 2.4.5
 * Bundler ~> 1.16.1
 * Passenger >= 5.2.2
 * libpq-dev (on Debian)
 
 ## Installation
 
-Make sure that you have the latest ruby 2.4.x version installed for your system.
-On a Mac, Linux, Solaris or any other Unix systems we highly recommend you to use rvm,
-the ruby version manager. With rvm upgrading a ruby version is without pain!
-To learn more about rvm please visit: http://rvm.io.
+Ensure that you have at least the ruby 2.4.5 installed on your system.
+On a Mac, Linux, Solaris or any other Unix systems we highly recommend you
+to use rvm, the ruby version manager. With rvm upgrading a ruby version is
+without pain! To learn more about rvm please visit: http://rvm.io.
 
 ```
-rvm install ruby-2.4.4
-rvm use ruby-2.4.4@kivitendo-rest-api --create
+rvm install ruby-2.4.5
+rvm use ruby-2.4.5@kivitendo-rest-api --create
 rvm @global do gem install bundler
 ```
 
@@ -140,6 +140,17 @@ curl -s \
       <last-name>Mustermann</last-name>
     </contact>
   </contacts>
+  <shippings>
+    <shipping>
+      <company>New Company</company>
+      <contact>Susanne Musterfrau</contact>
+      <gender>f/gender>
+      <street>Teststraße 42</street>
+      <zipcode>1000</zipcode>
+      <city>Berlin</city>
+      <country>Deutschland</country>
+    </shipping>
+  </shippings>
 </customer>
 '
 ```
@@ -205,7 +216,7 @@ curl -s \
       <position>1</position>
       <product-id>1</product-id>
       <description>Free cookies</description>
-      <net-price>0.0</net-price>
+      <price>0.0</price>
       <discount>0.0</discount>
       <qty>1.0</qty>
       <unit>Stck</unit>
@@ -215,7 +226,7 @@ curl -s \
       <position>2</position>
       <product-id>2</product-id>
       <description>wedding-cake</description>
-      <net-price>41.18</net-price>
+      <price>41.18</price>
       <discount>0.0</discount>
       <qty>1.0</qty>
       <unit>Stck</unit>
