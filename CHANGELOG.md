@@ -1,3 +1,8 @@
+0.1.2, 2019-02-25
+---
+* Use price (instead of net-price) to be flexible for net and gross
+* Remove net-* prices from legacy_mapper
+
 0.0.5, 2019-02-07
 ---
 * Include shipping-address
