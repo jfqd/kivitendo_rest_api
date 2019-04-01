@@ -20,14 +20,14 @@ The following models are included:
 ## Requirements
 
 * kivitendo ~> 3.5.1
-* Ruby >= 2.4.5
+* Ruby >= 2.3.x
 * Bundler ~> 1.16.1
 * Passenger >= 5.2.2
 * libpq-dev (on Debian)
 
 ## Installation
 
-Ensure that you have at least the ruby 2.4.5 installed on your system.
+Ensure that you have at least the ruby 2.3.x installed on your system.
 On a Mac, Linux, Solaris or any other Unix systems we highly recommend you
 to use rvm, the ruby version manager. With rvm upgrading a ruby version is
 without pain! To learn more about rvm please visit: http://rvm.io.
@@ -144,7 +144,7 @@ curl -s \
     <shipping>
       <company>New Company</company>
       <contact>Susanne Musterfrau</contact>
-      <gender>f/gender>
+      <gender>f</gender>
       <street>Teststraße 42</street>
       <zipcode>1000</zipcode>
       <city>Berlin</city>
