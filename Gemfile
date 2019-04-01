@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.1.6'
 
 # postgresql 9.2 can use pg >= 1.0, postgresql 9.1 need to use < 1.0
 gem 'pg', '0.21.0'
