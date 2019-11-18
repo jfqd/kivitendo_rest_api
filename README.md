@@ -341,4 +341,4 @@ We use Phusion Passenger, but you can use thin, puma, unicorn or any other rack 
 * https://stackoverflow.com/questions/38360271/rails-5-accepts-nested-attributes-not-working#44512631
 * https://stackoverflow.com/questions/21163298/how-to-rename-alias-rabl-nodes
 
-(c) 2019 Stefan Husch, qutic development
+(c) 2019 Stefan Husch, qutic development GmbH
