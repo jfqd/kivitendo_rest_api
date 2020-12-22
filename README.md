@@ -44,7 +44,7 @@ To get the application started run the following commands in a console:
   git clone https://github.com/jfqd/kivitendo_rest_api.git
   cd kivitendo_rest_api
   export RAILS_ENV=production
-  bundle install
+  bundle install --without development test
 ```
 
 Before starting the webserver we need to create a secret, set the http-basic
