@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :orders
       resources :products
       resources :categories
+      resources :defaults
     end
     # version 2 of our api
   end
