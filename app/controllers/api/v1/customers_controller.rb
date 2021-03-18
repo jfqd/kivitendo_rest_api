@@ -7,7 +7,12 @@ module Api
           created_at_gte = Time.zone.parse(params[:created_at_gte])
           Customer.where("itime >= ?", created_at_gte)
         elsif params[:email].present?
-          Customer.where(email: params[:email])
+          customer = Customer.where(email: params[:email]) rescue nil
+          if customer.nil?
+            c = Contact.where(cp_email: params[:email]) rescue nil
+            customer = Customer.where(cp_cv_id: c.cp_cv_id) if c.present?
+          end
+          return customer
         else
           Customer.all
         end
