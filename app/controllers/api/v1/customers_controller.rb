@@ -12,7 +12,7 @@ module Api
             c = Contact.where(cp_email: params[:email]) rescue nil
             customer = Customer.where(cp_cv_id: c.cp_cv_id) if c.present?
           end
-          return customer
+          customer
         else
           Customer.all
         end
