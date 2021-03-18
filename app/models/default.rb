@@ -5,6 +5,7 @@ class Default < ApplicationRecord
   legacy_mapper [
     [:invoice_number,  :invnumber],
     [:order_number,    :sonumber],
+    [:quote_number,    :sqnumber],
     [:customer_number, :customernumber]
   ]
   

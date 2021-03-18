@@ -6,12 +6,14 @@ class Order < ApplicationRecord
   
   # map usable to legacy fields-names
   legacy_mapper [
-    [:order_number,  :ordnumber],
-    [:gross_total,   :amount],
-    [:net_total,     :netamount],
-    [:contact_id,    :cp_id],
-    [:delivery_date, :reqdate],
-    [:order_date,    :transdate]
+    [:order_number,      :ordnumber],
+    [:quote_number,      :quonumber],
+    [:gross_total,       :amount],
+    [:net_total,         :netamount],
+    [:contact_id,        :cp_id],
+    [:delivery_date,     :reqdate],
+    [:order_date,        :transdate],
+    [:shop_order_number, :cusordnumber]
   ]
   
   accepts_nested_attributes_for :orderitems, allow_destroy: true,
@@ -49,5 +51,9 @@ class Order < ApplicationRecord
   def updated_at=(v)
     # do nothing
   end
+  
+  # def quotation
+  #   order_number.blank?
+  # end
   
 end
