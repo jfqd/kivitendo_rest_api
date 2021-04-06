@@ -8,9 +8,9 @@ module Api
           Customer.where("itime >= ?", created_at_gte)
         elsif params[:email].present?
           customer = Customer.where(email: params[:email]) rescue nil
-          if customer.nil?
+          if customer.blank?
             c = Contact.where(cp_email: params[:email]) rescue nil
-            customer = Customer.where(cp_cv_id: c.cp_cv_id) if c.present?
+            customer = Customer.where(id: c.first.cp_cv_id) if c.try(:first).present?
           end
           customer
         else
