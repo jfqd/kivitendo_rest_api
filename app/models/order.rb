@@ -12,6 +12,7 @@ class Order < ApplicationRecord
     [:net_total,     :netamount],
     [:contact_id,    :cp_id],
     [:delivery_date, :reqdate],
+    [:validity_date, :reqdate_as_date],
     [:order_date,    :transdate],
     [:shop_number,   :cusordnumber]
   ]
