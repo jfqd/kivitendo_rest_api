@@ -17,8 +17,8 @@ module Api
 
       def create
         @order = Order.new(order_params)
-        if @order.present? && @order.order_number.empty?
-          @order.order_number = (Order.last.order_number.to_i + 1).to_s
+        if @order.present? && @order.order_number.blank? && @order.quote_number.blank?
+          @order.order_number = get_next_order_number
         end
         @order.save!
       end
@@ -38,11 +38,19 @@ module Api
       end
 
       private
-      
+
       def order_params
         # FIXME: might be dangerous to whitelist everything
         params.require(:order).permit!
       end
+
+      def get_next_order_number
+        default = Default.first
+        default.order_number = (default.order_number.to_i + 1).to_s
+        default.save
+        default.order_number
+      end
+
     end
   end
 end
