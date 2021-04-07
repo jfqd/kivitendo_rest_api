@@ -2,6 +2,8 @@ class Order < ApplicationRecord
   self.table_name  = 'oe'
   self.primary_key = 'id'
   
+  before_save :set_validity_date, if: :quotation?
+  
   has_many :orderitems, foreign_key: :trans_id
   
   # map usable to legacy fields-names
@@ -53,8 +55,14 @@ class Order < ApplicationRecord
     # do nothing
   end
   
-  # def quotation
-  #   order_number.blank?
-  # end
+  private
+  
+  def set_validity_date
+    self.reqdate_as_date = ( Time.now + 14.days ) if new_record?
+  end
+  
+  def quotation?
+    self.ordnumber.blank?
+  end
   
 end
