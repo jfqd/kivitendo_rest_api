@@ -321,6 +321,10 @@ You get the idea, right?
 
 We use Phusion Passenger, but you can use thin, puma, unicorn or any other rack server as well.
 
+```
+/usr/local/bin/bundle exec /usr/bin/ruby bin/rails server -e production -d
+```
+
 ## Todo
 
 - add model validation
