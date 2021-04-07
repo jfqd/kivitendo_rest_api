@@ -8,6 +8,8 @@ module Api
           Order.where("itime >= ?", created_at_gte)
         elsif params[:order_number].present?
           Order.where("ordnumber = ?", params[:order_number])
+        elsif params[:quote_number].present?
+          Order.where("quonumber = ?", params[:quote_number])
         else
           Order.all
         end
