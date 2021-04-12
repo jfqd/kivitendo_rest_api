@@ -14,7 +14,7 @@ class Order < ApplicationRecord
     [:net_total,     :netamount],
     [:contact_id,    :cp_id],
     [:delivery_date, :reqdate],
-    [:validity_date, :reqdate_as_date],
+    [:validity_date, :reqdate],
     [:order_date,    :transdate],
     [:shop_number,   :cusordnumber]
   ]
@@ -58,11 +58,11 @@ class Order < ApplicationRecord
   private
 
   def set_validity_date
-    self.reqdate_as_date = ( Time.now + 14.days ) if new_record?
+    self.validity_date = ( Time.now + 14.days ) if new_record?
   end
 
   def quotation?
-    self.ordnumber.blank?
+    self.order_number.blank?
   end
 
 end
