@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.2.5'
+gem 'rails', '~> 5.2.7'
 
 # postgresql 9.2 can use pg >= 1.0, postgresql 9.1 need to use < 1.0
 gem 'pg', '0.21.0'
@@ -15,6 +15,8 @@ gem 'rabl'
 gem 'jbuilder'   # wihout it rabl will not work in rails >= 5
 gem 'actionpack-xml_parser'
 # gem 'bcrypt', '~> 3.1.7'
+
+gem "nokogiri", "~> 1.13.4"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
