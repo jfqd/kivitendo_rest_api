@@ -16,7 +16,7 @@ gem 'jbuilder'   # wihout it rabl will not work in rails >= 5
 gem 'actionpack-xml_parser'
 # gem 'bcrypt', '~> 3.1.7'
 
-gem "nokogiri", "~> 1.13.4"
+gem "nokogiri", ">= 1.13.4"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
