@@ -20,9 +20,9 @@ The following models are included:
 ## Requirements
 
 * kivitendo ~> 3.5.1
-* Ruby >= 2.3.x
-* Bundler ~> 1.16.1
-* Passenger >= 5.2.2
+* Ruby >= 3.0.x
+* Bundler ~> 2.4.21
+* Puma >= 6.4.0
 * libpq-dev (on Debian)
 
 ## Installation
@@ -33,8 +33,8 @@ to use rvm, the ruby version manager. With rvm upgrading a ruby version is
 without pain! To learn more about rvm please visit: http://rvm.io.
 
 ```
-rvm install ruby-2.4.5
-rvm use ruby-2.4.5@kivitendo-rest-api --create
+rvm install ruby-3.0.2
+rvm use ruby-3.0.2@kivitendo-rest-api --create
 rvm @global do gem install bundler
 ```
 
