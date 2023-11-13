@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby ">=3.1.0"
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -14,6 +16,7 @@ gem 'puma'
 gem 'rabl'
 gem 'jbuilder'   # wihout it rabl will not work in rails >= 5
 gem 'actionpack-xml_parser'
+gem 'rexml'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem "nokogiri", ">= 1.15.4"
