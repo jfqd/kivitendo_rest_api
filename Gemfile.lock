@@ -91,8 +91,8 @@ GEM
     marcel (1.0.4)
     method_source (1.1.0)
     mini_mime (1.1.5)
-    minitest (5.23.1)
-    net-imap (0.4.12)
+    minitest (5.24.1)
+    net-imap (0.4.14)
       date
       net-protocol
     net-pop (0.1.2)
@@ -145,7 +145,7 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.11.1)
       ffi (~> 1.0)
-    rexml (3.3.0)
+    rexml (3.3.1)
       strscan
     spring (4.2.1)
     spring-watcher-listen (2.1.0)
