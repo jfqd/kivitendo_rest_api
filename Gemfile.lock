@@ -104,7 +104,7 @@ GEM
     nio4r (2.7.3)
     nokogiri (1.16.7-x86_64-darwin)
       racc (~> 1.4)
-    pg (1.5.4)
+    pg (1.5.8)
     puma (6.4.3)
       nio4r (~> 2.0)
     rabl (0.16.1)
@@ -145,7 +145,7 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.11.1)
       ffi (~> 1.0)
-    rexml (3.3.7)
+    rexml (3.3.8)
     spring (4.2.1)
     spring-watcher-listen (2.1.0)
       listen (>= 2.7, < 4.0)
@@ -168,6 +168,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
+  x86_64-darwin-21
 
 DEPENDENCIES
   actionpack-xml_parser
@@ -175,7 +176,7 @@ DEPENDENCIES
   jbuilder
   listen
   nokogiri (>= 1.15.4)
-  pg (= 1.5.4)
+  pg (~> 1.5.4)
   puma
   rabl
   rails (~> 6.1.7.1)
@@ -188,4 +189,4 @@ RUBY VERSION
    ruby 3.1.3p185
 
 BUNDLED WITH
-   2.3.26
+   2.5.19

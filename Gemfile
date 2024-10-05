@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 6.1.7.1'
 
 # postgresql 9.2 can use pg >= 1.0, postgresql 9.1 need to use < 1.0
-gem 'pg', '1.5.4'
+gem 'pg', '~> 1.5.4'
 
 gem 'puma'
 gem 'rabl'
