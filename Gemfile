@@ -19,7 +19,7 @@ gem 'actionpack-xml_parser'
 gem 'rexml'
 # gem 'bcrypt', '~> 3.1.7'
 
-gem "nokogiri", ">= 1.15.4"
+gem "nokogiri"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
