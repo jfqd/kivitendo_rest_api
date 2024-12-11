@@ -4,30 +4,31 @@ This project aims to add a http-basic protected REST-API to kivitendo.
 
 The following models are included:
 
-| rest_api model     | kivitendo database tables |
-|--------------------|---------------------------|
-| Customer           | customer                  |
-| Contact            | contacts                  |
-| Shipping           | shipto                    |
-| TaxZone            | tax_zones                 |
-| Currency           | currencies                |
-| Order              | oe                        |
-| Orderitem          | orderitems                |
-| Product            | parts                     |
-| Category           | partsgroup                |
-| PaymentTerms       | payment_terms             |
+| rest_api model     | kivitendo database tables    |
+|--------------------|------------------------------|
+| Customer           | customer                     |
+| Contact            | contacts                     |
+| Shipping           | shipto                       |
+| BillingAddress     | additional_billing_addresses |
+| TaxZone            | tax_zones                    |
+| Currency           | currencies                   |
+| Order              | oe                           |
+| Orderitem          | orderitems                   |
+| Product            | parts                        |
+| Category           | partsgroup                   |
+| PaymentTerms       | payment_terms                |
 
 ## Requirements
 
-* kivitendo ~> 3.5.1
-* Ruby >= 3.0.x
-* Bundler ~> 2.4.21
-* Puma >= 6.4.0
+* kivitendo ~> 3.9.1
+* Ruby >= 3.x
+* Bundler ~> 2.5.23
+* Puma >= 6.5.0
 * libpq-dev (on Debian)
 
 ## Installation
 
-Ensure that you have at least the ruby 2.3.x installed on your system.
+Ensure that you have at least the ruby 3.x installed on your system.
 On a Mac, Linux, Solaris or any other Unix systems we highly recommend you
 to use rvm, the ruby version manager. With rvm upgrading a ruby version is
 without pain! To learn more about rvm please visit: http://rvm.io.
@@ -46,6 +47,9 @@ To get the application started run the following commands in a console:
   export RAILS_ENV=production
   bundle install --path vendor/bundle --without development test
 ```
+
+If you have an older kivitendo version, where the `additional_billing_addresses`
+table is missing, you may want to use version 0.1.2 of this api.
 
 Before starting the webserver we need to create a secret, set the http-basic
 credentials and the database-url.
@@ -345,4 +349,4 @@ We use Phusion Passenger, but you can use thin, puma, unicorn or any other rack 
 * https://stackoverflow.com/questions/38360271/rails-5-accepts-nested-attributes-not-working#44512631
 * https://stackoverflow.com/questions/21163298/how-to-rename-alias-rabl-nodes
 
-(c) 2021 qutic development GmbH
+(c) 2018-2024 qutic development GmbH

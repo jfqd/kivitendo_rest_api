@@ -25,3 +25,6 @@ end
 child :shippings do
   attributes :id, :customer_id, :company, :contact, :gender, :email, :street, :zipcode, :city, :country, :created_at, :updated_at
 end
+child :billing_addresses do
+  attributes :id, :default_address, :name, :department_1, :department_2, :street, :zipcode, :city, :country, :gln, :contact, :email, :phone, :fax, :created_at, :updated_at
+end

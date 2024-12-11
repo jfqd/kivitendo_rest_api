@@ -2,13 +2,19 @@ class Customer < ApplicationRecord
   self.table_name  = 'customer'
   self.primary_key = 'id'
   
-  has_many :contacts,  foreign_key: :cp_cv_id
-  has_many :shippings, foreign_key: :trans_id
+  has_many :contacts,          foreign_key: :cp_cv_id
+  has_many :shippings,         foreign_key: :trans_id
+  has_many :billing_addresses, foreign_key: :customer_id
   
-  accepts_nested_attributes_for :contacts,  allow_destroy: true,
-                                            reject_if: :all_blank
-  accepts_nested_attributes_for :shippings, allow_destroy: true,
-                                            reject_if: :all_blank
+  accepts_nested_attributes_for :contacts,
+                                allow_destroy: true,
+                                reject_if: :all_blank
+  accepts_nested_attributes_for :shippings,
+                                allow_destroy: true,
+                                reject_if: :all_blank
+  accepts_nested_attributes_for :billing_addresses,
+                                allow_destroy: true,
+                                reject_if: :all_blank
   
   def contacts=(params)
     params.each do |c|
