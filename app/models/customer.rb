@@ -18,14 +18,15 @@ class Customer < ApplicationRecord
   
   def contacts=(params)
     params.each do |c|
+      h = c[1]
       if new_record?
-        self.contacts.build(c[1])
+        self.contacts.build(h)
       else
-        if c['id'].present?
-          contact = self.contacts.all.detect { |co| co.cp_id == c['id'] }
-          contact.attributes = c
+        _contact = self.contacts.all.detect { |co| co.cp_cv_id == self.id }
+        if _contact.present?
+          _contact.attributes = h
         else
-          self.contacts.build(c)
+          self.contacts.build(h)
         end
       end
     end
@@ -33,14 +34,15 @@ class Customer < ApplicationRecord
   
   def shippings=(params)
     params.each do |s|
+      h = s[1]
       if new_record?
-        self.shippings.build(s[1])
+        self.shippings.build(h)
       else
-        if s['id'].present?
-          shipping = self.shippings.all.detect { |sh| sh.trans_id == s['id'] }
-          shippings.attributes = s
+        _shipping = self.shippings.all.detect { |sh| sh.trans_id == self.id }
+        if _shipping.present?
+          _shipping.attributes = h
         else
-          self.shippings.build(s)
+          self.shippings.build(h)
         end
       end
     end
