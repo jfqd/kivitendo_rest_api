@@ -19,6 +19,14 @@ gem 'actionpack-xml_parser'
 gem 'rexml'
 # gem 'bcrypt', '~> 3.1.7'
 
+# as long rails is version 6.x !!!
+gem 'concurrent-ruby', '1.3.4'
+
+if RUBY_VERSION >= '3.3.0'
+  gem 'bigdecimal'
+  gem 'mutex_m'
+end
+
 gem "nokogiri"
 
 group :development, :test do
