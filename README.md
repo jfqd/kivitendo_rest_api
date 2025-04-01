@@ -34,8 +34,8 @@ to use rvm, the ruby version manager. With rvm upgrading a ruby version is
 without pain! To learn more about rvm please visit: http://rvm.io.
 
 ```
-rvm install ruby-3.0.2
-rvm use ruby-3.0.2@kivitendo-rest-api --create
+rvm install ruby-3.3.6
+rvm use ruby-3.3.6@kivitendo-rest-api --create
 rvm @global do gem install bundler
 ```
 
@@ -62,12 +62,11 @@ credentials and the database-url.
   # create a secret for the application
   bundle exec rails secret
 
-  # and copy it into the secret.yml.enc
+  # and copy it into the credentials file
   # together with the http-basic
   # credentials and the database-url
-  # see secrets.yml.bak for reference
-  bundle exec rails secrets:setup
-  bundle exec rails secrets:edit
+  # see credentials.bak for reference
+  bundle exec rails credentials:edit --environment production
 
   # start the webserver
   bundle exec passenger start -d

@@ -25,6 +25,8 @@ passenger.*
 
 # Ignore encrypted secrets key file.
 config/secrets.yml.key
+config/master.key
+config/credentials
 
 # ignore capistrano
 Capfile
@@ -33,3 +35,4 @@ config/deploy*
 .rsync_cache
 .rbenv-gemsets
 .ruby-version
+
