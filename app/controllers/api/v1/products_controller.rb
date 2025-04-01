@@ -22,7 +22,7 @@ module Api
 
       def update
         @product = Product.find(params[:id])
-        @product.update_attributes(product_params)
+        @product.update(product_params)
       end
 
       def destroy

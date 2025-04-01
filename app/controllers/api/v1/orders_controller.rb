@@ -29,7 +29,7 @@ module Api
 
       def update
         @order = Order.find(params[:id])
-        @order.update_attributes(order_params)
+        @order.update(order_params)
       end
 
       def destroy

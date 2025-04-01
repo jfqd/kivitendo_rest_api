@@ -29,7 +29,7 @@ module Api
 
       def update
         @customer = Customer.find(params[:id])
-        @customer.update_attributes(customer_params)
+        @customer.update(customer_params)
       end
 
       def destroy

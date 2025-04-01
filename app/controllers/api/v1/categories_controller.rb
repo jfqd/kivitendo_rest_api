@@ -17,7 +17,7 @@ module Api
 
       def update
         @category = Category.find(params[:id])
-        @category.update_attributes(category_params)
+        @category.update(category_params)
       end
 
       def destroy

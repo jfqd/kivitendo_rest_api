@@ -8,7 +8,7 @@ module Api
 
       def update
         @default = Default.first
-        @default.update_attributes(default_params)
+        @default.update(default_params)
       end
 
       private
