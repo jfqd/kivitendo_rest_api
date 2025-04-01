@@ -8,16 +8,16 @@ class Contact < ApplicationRecord
 
   # map usable to legacy fields-names
   legacy_mapper [
-    [:id,        :cp_id],
-    [:title,     :cp_title],
-    [:fist_name, :cp_givenname],
-    [:last_name, :cp_name],
-    [:gender,    :cp_gender],
-    [:position,  :cp_position],
-    [:email,     :cp_email],
-    [:phone,     :cp_phone1],
-    [:fax,       :cp_fax],
-    [:mobile,    :cp_mobile1]
+    [:id,         :cp_id],
+    [:title,      :cp_title],
+    [:first_name, :cp_givenname],
+    [:last_name,  :cp_name],
+    [:gender,     :cp_gender],
+    [:position,   :cp_position],
+    [:email,      :cp_email],
+    [:phone,      :cp_phone1],
+    [:fax,        :cp_fax],
+    [:mobile,     :cp_mobile1]
   ]
   
   def created_at
