@@ -5,7 +5,8 @@ class Order < ApplicationRecord
   before_save :set_validity_date, if: :quotation?
 
   has_many :orderitems, foreign_key: :trans_id
-
+  has_one  :periodic_invoice, foreign_key: :oe_id
+  
   # map usable to legacy fields-names
   legacy_mapper [
     [:order_number,  :ordnumber],
@@ -22,6 +23,9 @@ class Order < ApplicationRecord
   accepts_nested_attributes_for :orderitems, allow_destroy: true,
                                              reject_if: :all_blank
 
+  accepts_nested_attributes_for :periodic_invoice,
+                                allow_destroy: true
+
   def orderitems=(params)
     params.each do |c|
       if new_record?
@@ -35,6 +39,10 @@ class Order < ApplicationRecord
         end
       end
     end
+  end
+  
+  def periodic_invoice=(params)
+    self.periodic_invoice.build(params) if new_record?
   end
 
   def created_at
