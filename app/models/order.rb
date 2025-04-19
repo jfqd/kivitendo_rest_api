@@ -23,8 +23,8 @@ class Order < ApplicationRecord
   accepts_nested_attributes_for :orderitems, allow_destroy: true,
                                              reject_if: :all_blank
 
-  accepts_nested_attributes_for :periodic_invoice,
-                                allow_destroy: true
+  accepts_nested_attributes_for :periodic_invoice, allow_destroy: true,
+                                                   reject_if: :all_blank
 
   def orderitems=(params)
     params.each do |c|
@@ -42,7 +42,8 @@ class Order < ApplicationRecord
   end
   
   def periodic_invoice=(params)
-    self.periodic_invoice.build(params) if new_record?
+    return unless new_record?
+    self.build_periodic_invoice(params)
   end
 
   def created_at
