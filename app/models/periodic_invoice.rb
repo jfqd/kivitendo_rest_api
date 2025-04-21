@@ -16,8 +16,9 @@ class PeriodicInvoice < ApplicationRecord
   private
   
   def set_requirements
-    self.order_value_periodicity = 'p' if self.order_value_periodicity.nil?
-    self.direct_debit = false          if self.direct_debit.nil?
+    self.order_value_periodicity = 'p' if self.order_value_periodicity.blank?
+    self.direct_debit = false          if self.direct_debit.blank?
+    self.start_date = Time.now         if self.start_date.blank?
   end
   
 end
