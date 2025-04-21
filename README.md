@@ -14,6 +14,8 @@ The following models are included:
 | Currency           | currencies                   |
 | Order              | oe                           |
 | Orderitem          | orderitems                   |
+| PeriodicInvoice    | periodic_invoices_configs    |
+| Invoice            | ar                           |
 | Product            | parts                        |
 | Category           | partsgroup                   |
 | PaymentTerms       | payment_terms                |
