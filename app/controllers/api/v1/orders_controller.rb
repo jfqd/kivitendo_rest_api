@@ -24,7 +24,7 @@ module Api
       end
 
       def show
-        Order.find(params[:id])
+        @order = Order.find(params[:id])
       end
 
       def update
