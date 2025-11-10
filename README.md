@@ -1,10 +1,10 @@
-# REST-API for kivitendo
+# REST-API for Kiwifrei-ERP
 
-This project aims to add a http-basic protected REST-API to kivitendo.
+This project aims to add a http-basic protected REST-API to Kiwifrei-ERP.
 
 The following models are included:
 
-| rest_api model     | kivitendo database tables    |
+| rest_api model     | Kiwifrei-ERP database tables |
 |--------------------|------------------------------|
 | Customer           | customer                     |
 | Contact            | contacts                     |
@@ -22,7 +22,7 @@ The following models are included:
 
 ## Requirements
 
-* kivitendo ~> 3.9.1
+* Kiwifrei-ERP ~> 3.9.2
 * Ruby >= 3.x
 * Bundler ~> 2.5.23
 * Puma >= 6.5.0
@@ -37,20 +37,20 @@ without pain! To learn more about rvm please visit: http://rvm.io.
 
 ```
 rvm install ruby-3.3.6
-rvm use ruby-3.3.6@kivitendo-rest-api --create
+rvm use ruby-3.3.6@kiwifrei-rest-api --create
 rvm @global do gem install bundler
 ```
 
 To get the application started run the following commands in a console:
 
 ```
-  git clone https://github.com/jfqd/kivitendo_rest_api.git
-  cd kivitendo_rest_api
+  git clone https://github.com/jfqd/kiwifrei_rest_api.git
+  cd kiwifrei_rest_api
   export RAILS_ENV=production
   bundle install --path vendor/bundle --without development test
 ```
 
-If you have an older kivitendo version, where the `additional_billing_addresses`
+If you have an older Kiwifrei-ERP version, where the `additional_billing_addresses`
 table is missing, you may want to use version 0.1.2 of this api.
 
 Before starting the webserver we need to create a secret, set the http-basic
@@ -337,7 +337,7 @@ We use Phusion Passenger, but you can use thin, puma, unicorn or any other rack 
 
 ## Useful links
 
-* https://github.com/jfqd/kivitendo_rest_api
+* https://github.com/jfqd/kiwifrei_rest_api
 * https://github.com/nesquena/rabl
 * http://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html
 * https://pikender.github.io/rails4-upgrade-action-pack-xml-params-removed/
